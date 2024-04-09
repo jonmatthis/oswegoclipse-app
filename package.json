@@ -1,23 +1,23 @@
 {
-  "name": "cooper-ai",
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "tauri": "tauri"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@tauri-apps/cli": "^1.4.0",
-    "@types/node": "^18",
-    "nuxt": "^3.10.3",
-    "nuxt-icon": "^0.4.1"
+    "tauri": "tauri",
+    "tauri-dev": "tauri dev",
+    "tauri-build": "tauri build"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.4.0",
-    "@vueuse/nuxt": "^10.2.1"
+    "nuxt": "^3.11.2",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.5.11"
   }
 }

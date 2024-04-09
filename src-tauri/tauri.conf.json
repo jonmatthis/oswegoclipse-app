@@ -1,26 +1,18 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "yarn build",
-    "beforeDevCommand": "yarn run dev",
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:3000",
-    "distDir": "../.output/public"
-    
+    "distDir": "../dist"
   },
   "package": {
-    "productName": "Cooper",
-    "version": "1.1.5"
+    "productName": "oswegoclipse-tauri",
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
-      "http": {
-        "all": true,
-        "request": true
-      },
-      "window": {
-        "all": false,
-        "close": true
-      }
+      "all": false
     },
     "bundle": {
       "active": true,
@@ -31,14 +23,14 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/CooperAI32.png",
-        "icons/CooperAI128.png",
-        "icons/CooperAI256.png",
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
         "icons/icon.icns",
-        "icons/CooperAI.ico"
+        "icons/icon.ico"
       ],
-      "identifier": "com.cooperai.dev",
-      "longDescription": "Cooper aims compliment mental therapy by leveraging AI capabilities.",
+      "identifier": "com.tauri.dev",
+      "longDescription": "",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -46,10 +38,8 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [
-        ".env"
-      ],
-      "shortDescription": "Virtual AI Therapist",
+      "resources": [],
+      "shortDescription": "",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -65,13 +55,11 @@
     },
     "windows": [
       {
-        "title": "Cooper",
         "fullscreen": false,
-        "resizable": false,
-        "transparent": true,
-        "decorations": false,
-        "minimizable": false,
-        "maximizable": false
+        "height": 600,
+        "resizable": true,
+        "title": "oswegoclipse-window-title",
+        "width": 800
       }
     ]
   }

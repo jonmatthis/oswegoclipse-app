@@ -1,14 +1,27 @@
 export default defineNuxtConfig({
-	devtools: { enabled: false },
-	ssr: false,
-	srcDir: "src",
-	css: ['~/assets/css/main.css'],
-	routeRules: {
-		"/": { prerender: true },
-		"/cooper": { prerender: true },
-	},
-	modules: ["nuxt-icon"], //these icons need internet to load, so I have to arrange an offline setup.
-	app: {
-		pageTransition: { name: "page", mode: "out-in" },
-	},
+  // (optional) Enable the Nuxt devtools
+  devtools: { enabled: true },
+  // Enable SSG
+  ssr: false,
+  vite: {
+    // Better support for Tauri CLI output
+    clearScreen: false,
+    // Enable environment variables
+    // Additional environment variables can be found at
+    // https://tauri.app/2/reference/environment-variables/
+    envPrefix: ['VITE_', 'TAURI_'],
+    server: {
+      // Tauri requires a consistent port
+      strictPort: true,
+      // Enables the development server to be discoverable by other devices for mobile development
+      hmr: {
+        // Use websocket for mobile hot reloading
+        protocol: 'ws',
+        // Make sure it's available on the network
+        host: '0.0.0.0',
+        // Use a specific port for hmr
+        port: 5183,
+      },
+    },
+  },
 });
